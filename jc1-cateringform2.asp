@@ -227,7 +227,8 @@ on error resume next
 objWSHNet.RemovePrinterConnection "LPT1:"
 objWSHNet.AddPrinterConnection "LPT1:", printer, False, strUsername, strPassword
 Set objPrinter = objFS.CreateTextFile("LPT1:", True)
-objPrinter.Write(PrnBody)
+'objPrinter.Write(PrnBody)
+objPrinter.Write(Body)
 Response.Write "<br><font size='5'>Your catering order has been submitted and sent to the printer.</font><br>"
 
 
@@ -241,6 +242,7 @@ if (name<>"") AND (rdate<>"") AND (email<>"") AND (deptchargecode<>"") THEN
 	mail.HTMLBody = Body
 	mail.Send()
 	' redirect to success page 
+	
 	' Close the print device object and trap for errors
 	'On Error Resume Next
 	objPrinter.Close
