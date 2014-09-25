@@ -37,9 +37,9 @@ Dim objFS, objWSHNet, objPrinter
 Dim mail
 
 'printer = "\\KVCHPRINT\FNS-PR1"
-printer = "\\mis-06\jasonpdf"
-strUsername = "kvch\jcathcart"
-strPassword = "5531Mkie6425"
+printer = "\\KVCHPRINT\MIS-PR1"
+strUsername = "kvch\ttester"
+strPassword = "ttester"
 
 pipe=" | "
 nbsp = "&nbsp;"
@@ -258,4 +258,3 @@ end if
 Response.Write br + Body
 
 %>
-
