@@ -65,10 +65,6 @@ setuptype = request.form(trim("setuptype"))
 deptchargecode = request.form(trim("deptchargecode"))
 notes = request.form(trim("notes"))
 
-for I = 1 to 23
-	execute("amt" & cstr(I) & " = cint(request.form(" & chr(34) & "amt" & cstr(I) & chr(34) & "))")
-next 
-
 price1 = .08
 price2 = .05
 price3 = .08
@@ -118,53 +114,53 @@ desc22 = "Ice Cream, 4 oz."
 desc23 = "Sherbet, 4 oz."
 
 For I = 1 to 23
-	Execute("total"& I &" = amt" & I & " * price" & I)
-	Execute("grandtotal = grandtotal + total" & I)
+	execute("amt" & cstr(I) & " = cint(request.form(" & chr(34) & "amt" & cstr(I) & chr(34) & "))")
+	execute("total"& I &" = amt" & I & " * price" & I)
+	execute("grandtotal = grandtotal + total" & I)
 next
-
 
 
 if (name = "") or (rdate = "") or (email = "") or (deptchargecode = "") or (rtime = "") or (attendees = "") or (groupname = "") or (location = "") or (setuptype = "") then
 	Response.Write "<p>We are sorry but there seems to be an error in the form. Please click back on your browser and complete the following field(s) : </p>" 
 	if (name<>"") Then
 	Else
-	Response.Write "<font color='red'>• Name is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Name is blank.</font><br>"
 	end if
 	if (rtime<>"") Then
 	Else
-	Response.Write "<font color='red'>• Time is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Time is blank.</font><br>"
 	end if
 	if (attendees<>"") Then
 	Else
-	Response.Write "<font color='red'>• Attendees is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Attendees is blank.</font><br>"
 	end if
 
 	if (groupname<>"") Then
 	Else
-	Response.Write "<font color='red'>• Group name is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Group name is blank.</font><br>"
 	end if
 
 	if (location<>"") Then
 	Else
-	Response.Write "<font color='red'>• Location is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Location is blank.</font><br>"
 	end if
 	
 	if (setuptype<>"") Then
 	Else
-	Response.Write "<font color='red'>• Setup type is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Setup type is blank.</font><br>"
 	end if
 
 	if (rdate<>"") Then
 	ELSE
-	Response.Write "<font color='red'>• Date has been left blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Date has been left blank.</font><br>"
 	end if
 	if (email<>"") Then
 	ELSE
-	Response.Write "<font color='red'>• Email address is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Email address is blank.</font><br>"
 	end if
 	if (deptchargecode<>"") Then
 	ELSE
-	Response.Write "<font color='red'>• Department Charge code is blank.</font><br>"
+	Response.Write "<font color='red'>ï¿½ Department Charge code is blank.</font><br>"
 	end if
 end if
 
