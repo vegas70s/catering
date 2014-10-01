@@ -33,9 +33,9 @@ tr = "<tr>"
 ctr ="</tr>"
 
 'get data from form
-name = request.form(trim("name"))
+name = request.form(rtrim("name"))
 email = request.form(trim("email"))
-emailFrom = email
+emailFrom = "noreply_cateringform@kvhealthcare.org"
 emailTo = "jcathcart@kvhealthcare.org"
 'EmailTo = email & "; mhanson@kvhealthcare.org"
 Subject = "Catering Request"
