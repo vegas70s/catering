@@ -1,6 +1,5 @@
-<% 
-Option Explicit
-
+<!--#include file="kvh-WrapText.asp"-->
+<%
 Dim I, EmailFrom, EmailTo, Subject, mail
 Dim printer, name, email, rdate, deptchargecode, grandtotal
 Dim rtime, attendees, location, groupname, setuptype, notes
@@ -35,7 +34,7 @@ ctr ="</tr>"
 'get data from form
 name = request.form(rtrim("name"))
 email = request.form(trim("email"))
-emailFrom = "noreply_cateringform@kvhealthcare.org"
+emailFrom = "form.catering-request@kvhealthcare.org"
 emailTo = "jcathcart@kvhealthcare.org"
 'EmailTo = email & "; mhanson@kvhealthcare.org"
 Subject = "Catering Request"
@@ -46,7 +45,9 @@ groupname = request.form(trim("groupname"))
 location = request.form(trim("location"))
 setuptype = request.form(trim("setuptype"))
 deptchargecode = request.form(trim("deptchargecode"))
-notes = request.form(trim("notes"))
+'notes = request.form(trim("notes"))
+' 2014-10-09 jcaathcart - added WrapText function to inject line breaks
+notes = WrapText( request.form(trim("notes")), 60 )
 
 price1 = .08
 price2 = .05
@@ -210,8 +211,8 @@ on error resume next
 objWSHNet.RemovePrinterConnection "LPT1:"
 objWSHNet.AddPrinterConnection "LPT1:", printer, False, strUsername, strPassword
 Set objPrinter = objFS.CreateTextFile("LPT1:", True)
-'objPrinter.Write(PrnBody)
-objPrinter.Write(Body)
+objPrinter.Write(PrnBody)
+'objPrinter.Write(Body)
 Response.Write "<br><font size='5'>Your catering order has been submitted and sent to the printer.</font><br>"
 
 

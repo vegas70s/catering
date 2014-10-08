@@ -32,19 +32,6 @@ p {
 	margin: 0 0 .5em;
 }
 
-/*
-input[type="button"], input[type="submit"] {
-	border: 2px solid black !important;
-	background: white !important;
-	line-height: 1.5em;
-	font-weight: bold;
-	font-size: .9em;
-	font-family: "Segoe UI", Arial, sans-serif !important;
-	margin-top: 1.5em;
-}
-*/
-
-/* new button */
 input[type="button"], input[type="submit"] {
 	border: 1px solid #0066FF;
 	background: #0066FF !important;
@@ -83,10 +70,17 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 #headerinfo input, #headerinfo textarea {
 	font-family: Arial, sans-serif;
-	font-size: 1em;
+	font-size: .95em;
 	border: 1px solid black;
 	font-weight: bold;
-	line-height: 1.3em;
+	line-height: 1.0em;
+	padding-left: .5em;
+}
+#headerinfo input .textgrayedout {
+	color: #888;
+}
+#headerinfo input .textnormal {
+	color: black;
 }
 table#headerinfo,
 table#itemstable {
@@ -209,7 +203,7 @@ button below to continue.
     <tr>
         <td>
             <label>Name</label>
-            <input name="name"></input>
+            <input name="name" value="First and Last" onclick="this.value=''"></input>
             <span class="redstar">*</span>
         </td>
         <td>
